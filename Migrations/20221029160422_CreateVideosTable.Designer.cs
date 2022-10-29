@@ -12,7 +12,7 @@ using workspace.Context;
 namespace workspace.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221029145742_CreateVideosTable")]
+    [Migration("20221029160422_CreateVideosTable")]
     partial class CreateVideosTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,10 +35,10 @@ namespace workspace.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
-                    b.Property<string>("Descrição")
+                    b.Property<string>("Description")
                         .HasColumnType("text");
 
-                    b.Property<string>("Titulo")
+                    b.Property<string>("Tittle")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");

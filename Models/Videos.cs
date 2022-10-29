@@ -13,8 +13,8 @@ namespace workspace.Models
     [Required]
     [MinLength(3)]
     [MaxLength(100)]
-    public string Titulo { get; set; }
-    public string Descrição { get; set; }
+    public string Tittle { get; set; }
+    public string Description { get; set; }
     [Required]
     [Url]
     public string URL { get; set; }

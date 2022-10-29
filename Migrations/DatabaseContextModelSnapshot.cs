@@ -33,10 +33,10 @@ namespace workspace.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
-                    b.Property<string>("Descrição")
+                    b.Property<string>("Description")
                         .HasColumnType("text");
 
-                    b.Property<string>("Titulo")
+                    b.Property<string>("Tittle")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
