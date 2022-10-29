@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -17,8 +18,7 @@ namespace workspace.Context
           .Property(video => video.CreatedAt)
           .HasDefaultValueSql("CURRENT_TIMESTAMP");
       modelBuilder.Entity<Videos>().Property(video => video.UpdatedAt)
-        .ValueGeneratedOnAddOrUpdate()
-        .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
+        .ValueGeneratedOnAddOrUpdate().HasDefaultValueSql("CURRENT_TIMESTAMP");
     }
   }
 }
