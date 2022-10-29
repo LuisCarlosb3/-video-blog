@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using workspace.Context;
 
 namespace workspace
 {
@@ -28,7 +29,9 @@ namespace workspace
     public void ConfigureServices(IServiceCollection services)
     {
 
-
+      services.AddDbContext<DatabaseContext>(options =>
+          options.UseNpgsql(Configuration.GetConnectionString("WebApiDatabase"))
+          );
       services.AddControllers();
       services.AddSwaggerGen(c =>
       {
