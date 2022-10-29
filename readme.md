@@ -8,7 +8,7 @@ Descrição
 URL
 ```
 ## Rotas disponíveis
-- [ ] `/videos` -> Listar todos os videos
+- [X] `/videos` -> Listar todos os videos
 - [ ] `/videos/<id>` -> pegar um video pelo ID
 - [ ] `/videos` -> criar um novo video com todos os campos validados
 - [ ] `/videos/` -> edita os campos de um video
