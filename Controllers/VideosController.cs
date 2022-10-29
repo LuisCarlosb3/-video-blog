@@ -66,5 +66,17 @@ namespace workspace.Controllers
       await _context.SaveChangesAsync();
       return Ok(video);
     }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteVideoById(Guid Id)
+    {
+      var video = await _context.Videos.FirstOrDefaultAsync(videos => videos.Id == Id);
+      if (video == null)
+      {
+        return NotFound();
+      }
+      _context.Videos.Remove(video);
+      await _context.SaveChangesAsync();
+      return Ok();
+    }
   }
 }
