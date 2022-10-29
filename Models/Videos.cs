@@ -1,19 +1,23 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace workspace.Models
 {
   public class Videos
   {
-    [Required]
-    private Guid Id { get; set; }
+
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public Guid Id { get; set; }
     [Required]
     [MinLength(3)]
     [MaxLength(100)]
-    private string Titulo { get; set; }
-    private string Descrição { get; set; }
+    public string Titulo { get; set; }
+    public string Descrição { get; set; }
     [Required]
     [Url]
-    private string URL { get; set; }
+    public string URL { get; set; }
     public DateTime? CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
   }
