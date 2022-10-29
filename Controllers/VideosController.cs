@@ -52,5 +52,19 @@ namespace workspace.Controllers
       await _context.SaveChangesAsync();
       return Ok(video);
     }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateVideoById(Guid Id, [FromBody] CreateVideoDTO videoData)
+    {
+      var video = await _context.Videos.FirstOrDefaultAsync(videos => videos.Id == Id);
+      if (video == null)
+      {
+        return NotFound();
+      }
+      _mapper.Map(videoData, video);
+      video.UpdatedAt = DateTime.UtcNow;
+      await _context.SaveChangesAsync();
+      return Ok(video);
+    }
   }
 }

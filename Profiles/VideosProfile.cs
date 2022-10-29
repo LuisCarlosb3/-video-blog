@@ -9,6 +9,7 @@ namespace workspace.Profiles
     public VideosProfile()
     {
       CreateMap<CreateVideoDTO, Videos>();
+      CreateMap<Videos, CreateVideoDTO>();
     }
   }
 }
