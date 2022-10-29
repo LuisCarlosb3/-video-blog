@@ -12,8 +12,8 @@ using workspace.Context;
 namespace workspace.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221029161624_ChangeUpdatedAtBehaviour")]
-    partial class ChangeUpdatedAtBehaviour
+    [Migration("20221029173912_CreateVideosTable")]
+    partial class CreateVideosTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,7 +48,7 @@ namespace workspace.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("UpdatedAt")
-                        .ValueGeneratedOnAddOrUpdate()
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasDefaultValueSql("CURRENT_TIMESTAMP");
 

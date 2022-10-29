@@ -17,8 +17,9 @@ namespace workspace.Context
       modelBuilder.Entity<Videos>()
           .Property(video => video.CreatedAt)
           .HasDefaultValueSql("CURRENT_TIMESTAMP");
-      modelBuilder.Entity<Videos>().Property(video => video.UpdatedAt)
-        .ValueGeneratedOnAddOrUpdate().HasDefaultValueSql("CURRENT_TIMESTAMP");
+      modelBuilder.Entity<Videos>()
+        .Property(video => video.UpdatedAt)
+        .HasDefaultValueSql("CURRENT_TIMESTAMP");
     }
   }
 }
