@@ -33,6 +33,17 @@ namespace workspace.Controllers
       return Ok(videos);
     }
 
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetVideoById(Guid Id)
+    {
+      var video = await _context.Videos.FirstOrDefaultAsync(videos => videos.Id == Id);
+      if (video == null)
+      {
+        return NotFound();
+      }
+      return Ok(video);
+    }
+
     [HttpPost]
     public async Task<IActionResult> CreateVideo([FromBody] CreateVideoDTO newVideo)
     {
