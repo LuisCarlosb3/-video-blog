@@ -13,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using workspace.Context;
-
+using AutoMapper;
 namespace workspace
 {
   public class Startup
@@ -33,6 +33,7 @@ namespace workspace
           options.UseNpgsql(Configuration.GetConnectionString("WebApiDatabase"))
           );
       services.AddControllers();
+      services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
       services.AddSwaggerGen(c =>
       {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "workspace", Version = "v1" });
