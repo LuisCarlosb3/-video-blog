@@ -7,7 +7,7 @@
 - [X] `/videos/` -> edita os campos de um video
 - [X] `/videos/<id>` -> deleta um video pelo ID
 - [ ] `/videos/?search=<termo>` -> busca um video com titulo relacionado
-- [ ] `/categorias` -> lista todas as categorias
+- [X] `/categorias` -> lista todas as categorias
 - [ ] `/categorias/<id>` -> pega uma categoria especifica 
 - [ ] `/categorias` -> cria uma categoria nova e retorna o objeto criado
 - [ ] `/categorias/<id>` -> atualiza uma categoria
