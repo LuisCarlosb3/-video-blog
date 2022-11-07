@@ -13,10 +13,14 @@
 - [ ] `/categorias/<id>` -> atualiza uma categoria
 - [ ] `/categorias/<id>` -> deleta uma categoria 
 - [ ] `categorias/<id>/videos/` -> retorna todos os videos da categoria
+- [ ] `/videos/free` -> retorna um numero fixo de videos disponíveis sem autenticação
 
 ## Regras
  - A categoria com ID = 1, deve chamar LIVRE e caso ela não seja especificada na criação do vídeo, vamos atribuir o ID = 1.
  - Todos os campos do video devem ser preenchidos
  - Todos os campos de categoria devem ser preenchidas
  - Não se pode ter mais de uma categroia com o mesmo nome
+ - As requisições GET devem possuir paginação de 5 itens por página, utilizando queryparm `?page=2`
+ - Adicionar autenticação para todas as rotas
+ - Deploy em cloud
  
