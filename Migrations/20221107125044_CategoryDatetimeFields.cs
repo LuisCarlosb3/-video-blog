@@ -13,8 +13,7 @@ namespace workspace.Migrations
                 name: "CategoryId",
                 table: "Videos",
                 type: "uuid",
-                nullable: false,
-                defaultValue: new Guid("00000000-0000-0000-0000-000000000000"));
+                nullable: true);
 
             migrationBuilder.CreateTable(
                 name: "Category",
@@ -42,7 +41,7 @@ namespace workspace.Migrations
                 column: "CategoryId",
                 principalTable: "Category",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
