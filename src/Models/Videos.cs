@@ -19,7 +19,7 @@ namespace workspace.Models
     [Url]
     public string URL { get; set; }
     public virtual Category Category { get; set; }
-    public Guid CategoryId { get; set; }
+    public Guid? CategoryId { get; set; }
     public DateTime? CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
   }

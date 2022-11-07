@@ -9,6 +9,7 @@ namespace workspace.Context
   public class DatabaseContext : DbContext
   {
     public DbSet<Videos> Videos { get; set; }
+    public DbSet<Category> Category { get; set; }
     public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
     {
     }
@@ -23,6 +24,13 @@ namespace workspace.Context
       modelBuilder.Entity<Videos>()
         .Property(video => video.UpdatedAt)
         .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+
+      modelBuilder.Entity<Videos>()
+        .HasOne(video => video.Category)
+        .WithMany(category => category.Videos)
+        .HasForeignKey(video => video.CategoryId)
+        .OnDelete(DeleteBehavior.Restrict);
     }
   }
 }
